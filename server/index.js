@@ -12,6 +12,9 @@ app.get('/',(req,res)=>{
 app.get('/about', (req,res)=>{
     return res.send(`Hello mr ${req.query.name}`)
 })
+
+
+app.listen(8000, ()=>{console.log("server started")});
 /*const myServer = http.createServer((req,res)=>{
     console.log("New req rec. ");
     res.end("Hello from Server");
@@ -19,5 +22,5 @@ app.get('/about', (req,res)=>{
  myServer.listen(8000, ()=> console.log("Server Started"));
  */
 
- const myServer=http.createServer(app);
- myServer.listen(8000, ()=>console.log("server started"));
+// const myServer=http.createServer(app);
+// myServer.listen(8000, ()=>console.log("server started"));
