@@ -22,10 +22,21 @@ app.get('/api/users',(req,res)=>{
 
 })
 
-app.get('/api/user/:id',(req,res)=>{
+
+
+app.route('/api/user/:id')
+.get((req,res)=>{
     const id=Number(req.params.id);
     const user=users.find((user)=>user.id==id ) ;
     return res.json(user);
 })
+.patch((req,res)=>{
+    return res.json({status : "pending"})
+})
+.delete((req,res)=>{
+    return res.json({status : "pending"})
+})
+
+
 
 app.listen(port, ()=>{console.log(`server started at port : ${port}`)});
