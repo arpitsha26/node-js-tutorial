@@ -7998,5 +7998,21 @@
     "email": "aflatterr@squidoo.com",
     "gender": "Female",
     "job_title": "Assistant Media Planner"
+  },
+  {
+    "first_name": "arpit",
+    "last_name": "sharma",
+    "email": "arpit12@gmail.com",
+    "gender": "male",
+    "job_title": "editor",
+    "id": 1001
+  },
+  {
+    "first_name": "shiv",
+    "last_name": "sharma",
+    "email": "shiv12@gmail.com",
+    "gender": "male",
+    "job_title": "editor",
+    "id": 1002
   }
 ]
