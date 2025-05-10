@@ -4,8 +4,21 @@ const users=require('./MOCK_DATA.json');
 
 const app = express();
 const port = 8000;
-
+// middelware
 app.use(express.urlencoded({extended: false}));
+app.use((req,res,next)=>{
+    console.log('hello from middleware 1');
+    next();
+})
+
+app.use((req,res,next)=>{
+    console.log(`hello from middleware 2`)
+    next();
+})
+
+
+
+
 
 //routes
 app.get('/users',(req,res)=>{
