@@ -1,9 +1,39 @@
 const express = require('express');
+const mongoose=require('mongoose');
 const fs= require('fs');
 const users=require('./MOCK_DATA.json');
 
 const app = express();
 const port = 8000;
+
+// connect mongoose
+mongoose.connect('mongodb://127.0.0.1:27017/ytapp1')
+.then(()=> console.log("mongodb connevted"))
+.catch((err)=>console.log("Mongo error", err));
+
+const userSchema= new mongoose.Schema({
+    firstName: {
+        type:String,
+        required:true,
+    },
+    lastName:{
+        type:String,
+        required:false
+    },
+    email:{
+        type:String,
+        required:true,
+        unique: true,
+    },
+    jobTitle: {
+        type:String,
+    },
+    gender: {
+        type:String,
+    }
+})
+
+const User =mongoose.model("user", userSchema)
 // middelware
 app.use(express.urlencoded({extended: false}));
 app.use((req,res,next)=>{

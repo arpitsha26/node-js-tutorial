@@ -1,0 +1,4 @@
+
+schema - define the structure
+schemq- model
+using model crud operation
