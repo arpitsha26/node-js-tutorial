@@ -10,7 +10,7 @@ const port = 8000;
 
 // connect mongoose
 
-connectMongoDb("mongodb://127.0.0.1:27017/ytapp1"); 
+connectMongoDb("mongodb://127.0.0.1:27017/ytapp1").then(()=>{console.log("Mongodb Connected!")}); 
 
 
 // middelware
@@ -24,7 +24,7 @@ app.use(logReqRes("log.txt"));
 
 
 //routes
-app.use("/user", userRouter);
+app.use("/api/users", userRouter);
 
 
 
